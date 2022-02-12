@@ -6,4 +6,8 @@
     <RootNamespace>stateless_state_machine</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="stateless" Version="5.11.0" />
+  </ItemGroup>
+
 </Project>
