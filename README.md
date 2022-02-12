@@ -1,3 +1,3 @@
 # stateless-state-machine
-lightweight state machine-based workflows impelemantation with stateless package
-.NET 6
+.NET 6 lightweight state machine-based workflows impelemantation with stateless package
+
