@@ -45,6 +45,8 @@ namespace stateless_state_machine
             car.Fire(Car.Action.Stop);
             Console.WriteLine($"Current state: {car.State}");
 
+            Console.WriteLine(car.IsInState(Car.State.Running));
+
         }
     }
 }
