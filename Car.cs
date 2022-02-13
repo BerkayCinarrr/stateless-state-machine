@@ -12,7 +12,7 @@ namespace stateless_state_machine
         {
             Start,
             Stop,
-            Move
+            Accelarate
         }
         private State state = State.Stopped;
         public State currentState
@@ -26,7 +26,7 @@ namespace stateless_state_machine
             {
                 (State.Stopped, Action.Start) => State.Started,
                 (State.Started, Action.Stop) => State.Stopped,
-                (State.Started, Action.Move) => State.Running,
+                (State.Started, Action.Accelarate) => State.Running,
                 (State.Running, Action.Stop) => State.Stopped,
                 _ => state
             };
