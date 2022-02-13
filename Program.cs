@@ -8,7 +8,6 @@ namespace stateless_state_machine
         {
             var car = new Stateless.StateMachine<Car.State, Car.Action>(Car.State.Stopped);
 
-
             //arrange
             car.Configure(Car.State.Stopped)
                 .Permit(Car.Action.Start, Car.State.Started);
@@ -46,6 +45,7 @@ namespace stateless_state_machine
             Console.WriteLine($"Current state: {car.State}");
 
             Console.WriteLine(car.IsInState(Car.State.Running));
+            Console.WriteLine(car.IsInState(Car.State.Stopped));
 
         }
     }
