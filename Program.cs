@@ -21,7 +21,9 @@ namespace stateless_state_machine
                 .OnExit(s => Console.WriteLine($"Exit: {s.Source} -> {s.Destination}"));
 
             car.Configure(Car.State.Running)
-                .Permit(Car.Action.Stop, Car.State.Stopped);
+                .SubstateOf(Car.State.Started)
+                .Permit(Car.Action.Stop, Car.State.Stopped)
+                .InternalTransition(Car.Action.Start, () => Console.WriteLine("Started called while in Running state"));
 
             Console.WriteLine($"Current state: {car.State}");
 
@@ -34,6 +36,8 @@ namespace stateless_state_machine
 
             car.Fire(Car.Action.Move);
             Console.WriteLine($"Current state: {car.State}");
+
+            car.Fire(Car.Action.Start);
 
             car.Fire(Car.Action.Stop);
             Console.WriteLine($"Current state: {car.State}");
